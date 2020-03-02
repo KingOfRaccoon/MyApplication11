@@ -29,7 +29,7 @@ class Pupil() : Man() {
 }
 class Group(){
     var pupils: MutableList<Pupil> = mutableListOf()
-    var nameofgroup: String = ""
+    var nameofgroup: String = "dfkjnhkj"
     var teacher: String = "Алексей Владимирович Костылев"
     var Name: Array<String> = arrayOf("Арвиль", "Артака", "Бестрева", "Ватерпежекосма", "Велира", "Вилора", "Гертруда", "Даздраперма")
     var surname : Array<String> = arrayOf("Иванова", "Смирнова", "Кузнецов", "Попова", "Васильева", "Петров", "Соколов", "Михайлов")
@@ -48,34 +48,39 @@ class Group(){
             pupils[i].display()
         }
 
+    override fun toString(): String {
+        return nameofgroup
     }
 
-class Kvant(){
+    }
+
+class Kvant() {
     var groups: MutableList<Group> = mutableListOf()
     var nameofkvant: String = ""
     var description: String = ""
-    var teachers : MutableList<String> = mutableListOf()
-    var space: Int = 0
+    var teachers: MutableList<String> = mutableListOf()
 
-    fun Group_t_f(){
+
+    fun Group_t_f() {
         for (i in 0..3)
             teachers.add(Group().teacher)
     }
-    fun makeGroup(teacher: Teacher, name: String): Group {
-        var groupi : Group = Group()
-        println(name)
-        groupi.pupil(space)
-        groupi.display(space)
-        println(teacher)
-        return groupi
-    }
-    fun display(){
 
-        println(nameofkvant)
-        println(description)
+    companion object {
+        var space: Int = 0
+        fun makeGroup(teacher: Teacher, name: String): Group {
 
+            var groupi: Group = Group()
+            println(name)
+            groupi.pupil(space)
+            groupi.display(space)
+            println(teacher)
+            return groupi
+        }
     }
+
     override fun toString(): String {
         return "$nameofkvant"
     }
 }
+

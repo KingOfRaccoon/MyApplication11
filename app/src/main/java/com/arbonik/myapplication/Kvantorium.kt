@@ -1,7 +1,8 @@
 package com.arbonik.myapplication
 
 import Kvant
-
+import Group
+import Teacher
 object Kvantorium {
     var nameofkvantorium: String = ""
     var adress: String = ""
@@ -9,23 +10,28 @@ object Kvantorium {
     var spaces: Array<Int> = arrayOf(16, 12, 14)
     var desc: Array<String> = arrayOf("Ит Квантум", "Био Квантум", "Робо Квантум")
     var kvants: MutableList<Kvant> = mutableListOf()
+    init {
+        kvants.add(makekvant("it"))
+        kvants[0].groups.add(Kvant.makeGroup(Teacher("1", "2", "3"), "FFFFFFFFFFFF"))
+    }
+
     fun makekvant(type: String): Kvant {
         var k: Kvant = Kvant()
         when (type) {
             "it" -> {
                 k.nameofkvant = kvantnames[0]
-                k.space = spaces[0]
+                //k.space = spaces[0]
                 k.description = desc[0]
             }
             "bio" -> {
                 k.nameofkvant = kvantnames[1]
-                k.space = spaces[1]
+                //k.space = spaces[1]
                 k.description = desc[1]
 
             }
             "robo" -> {
                 k.nameofkvant = kvantnames[2]
-                k.space = spaces[2]
+                //k.space = spaces[2]
                 k.description = desc[2]
 
             }
